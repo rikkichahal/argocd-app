@@ -17,4 +17,17 @@ spec:
         host:  demo-app.app.svc.cluster.local # Your app's service name
         port:
           number: 8085         # Port where your app listens
+  hosts:
+  - "kiali.example.com"
+  gateways:
+  - app-gateway
+  http:
+  - match:
+    - uri:
+        prefix: / # matches all paths
+    route:
+    - destination:
+        host: kiali.istio-system.svc.cluster.local
+        port:
+          number: 20001
 
