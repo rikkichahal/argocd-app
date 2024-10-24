@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "grafana.devopswith.com"
+  - "grafana.devopswithme.com"
   gateways:
   - grafana-gateway
   http:
