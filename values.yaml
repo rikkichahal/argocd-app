@@ -64,7 +64,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: app.devopswithme.co
+    - host: demo.devopswithme.co
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -89,13 +89,13 @@ resources:
 livenessProbe:
   httpGet:
     path: /
-    port: 8085
+    port: app-health/demo-app/readyz/livez
   initialDelaySeconds: 60
-  periodSeconds: 10
+  periodSeconds: 15020
 readinessProbe:
   httpGet:
-    path: /
-    port: 8085
+    path: /app-health/demo-app/readyz
+    port: 15020
   initialDelaySeconds: 30
   periodSeconds: 10
 
