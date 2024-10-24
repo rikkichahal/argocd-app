@@ -1,20 +1,16 @@
-apiVersion: networking.istio.io/v1beta1
+apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
-  name: kiali-virtualservice
+  name: kiali-vs
   namespace: istio-system
 spec:
   hosts:
   - "kiali.devopswithme.com"
   gateways:
-  - demo-app-gateway
+  - kiali-gateway
   http:
-  - match:
-    - uri:
-        prefix: /
-    route:
+  - route:
     - destination:
-        host: kiali.istio-system.svc.cluster.local
+        host: kiali
         port:
           number: 20001
-

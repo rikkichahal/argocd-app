@@ -12,5 +12,5 @@ spec:
       protocol: HTTP
     hosts:
     - "demo.devopswithme.com"
-    - "kiali.devopswithme.com"  # The hostname your app will respond to
+     # The hostname your app will respond to
 
