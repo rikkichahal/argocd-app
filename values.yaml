@@ -89,7 +89,7 @@ resources:
 livenessProbe:
   httpGet:
     path: /
-    port: app-health/demo-app/readyz/livez
+    port: app-health/demo-app/livez
   initialDelaySeconds: 60
   periodSeconds: 15020
 readinessProbe:
