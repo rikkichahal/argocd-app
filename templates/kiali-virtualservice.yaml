@@ -9,6 +9,9 @@ spec:
   gateways:
   - demo-app-gateway
   http:
+  - match:
+    - uri:
+        prefix: /
     route:
     - destination:
         host: kiali.istio-system.svc.cluster.local
