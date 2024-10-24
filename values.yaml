@@ -88,10 +88,10 @@ resources:
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
   httpGet:
-    path: /
-    port: app-health/demo-app/livez
+    path: /app-health/demo-app/livez
+    port: 15020
   initialDelaySeconds: 60
-  periodSeconds: 15020
+  periodSeconds: 10
 readinessProbe:
   httpGet:
     path: /app-health/demo-app/readyz
